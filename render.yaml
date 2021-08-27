@@ -8,5 +8,14 @@ services:
     buildCommand: sh ./render-build-static.sh
     domains:
       - bare.nextplate.dev
+    headers:
+      # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+      - path: /*
+        name: Cache-Control
+        value: public, s-maxage=1, stale-while-revalidate=59
+      # https://nextjs.org/docs/going-to-production#caching
+      - path: /_next/static/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
     pullRequestPreviewsEnabled: true
     staticPublishPath: out
