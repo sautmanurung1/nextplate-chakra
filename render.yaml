@@ -5,7 +5,7 @@ services:
   - name: nextplate-bare
     type: web
     env: static
-    buildCommand: sh ./render-build-static.sh
+    buildCommand: sh ./scripts/render-build-static.sh
     domains:
       - bare.nextplate.dev
     headers:
