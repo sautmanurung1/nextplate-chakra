@@ -1,0 +1,88 @@
+{
+  "name": "nextplate-bare",
+  "description": "Opinionated Next.js barebones template",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kodingdotninja/nextplate-bare",
+  "repository": "https://github.com/kodingdotninja/nextplate-bare.git",
+  "author": "Griko Nibras <griko@koding.ninja>",
+  "scripts": {
+    "# general commands": "##################################################",
+    "build": "next build && yarn generate:favicons && yarn generate:sitemap",
+    "build:local": "env-cmd yarn build",
+    "build:static": "yarn build && next export",
+    "build:static-local": "env-cmd yarn build:static",
+    "deduplicate": "npx yarn-deduplicate && yarn",
+    "dev": "next",
+    "generate:favicons": "node scripts/favicons.js",
+    "generate:sitemap": "next-sitemap --config config/sitemap.js",
+    "lint": "eslint --fix \"./**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks",
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn lint && yarn type-check",
+    "#": "###################################################################"
+  },
+  "dependencies": {
+    "@types/favicons": "^6",
+    "@types/node": "^14",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "eslint": "^7",
+    "eslint-config-kdnj": "^0",
+    "eslint-config-next": "^11",
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-react": "^7",
+    "favicons": "^6",
+    "next": "^11",
+    "next-connect": "^0",
+    "next-seo": "^4",
+    "next-sitemap": "^1",
+    "preact": "^10",
+    "react": "^17",
+    "react-dom": "^17",
+    "typescript": "^4"
+  },
+  "devDependencies": {
+    "env-cmd": "^10",
+    "husky": "^7",
+    "lint-staged": "^11",
+    "shx": "^0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-kdnj/react",
+      "plugin:@next/next/recommended"
+    ],
+    "ignorePatterns": [
+      "generated"
+    ],
+    "rules": {
+      "jsx-a11y/anchor-is-valid": [
+        "off"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "all"
+  },
+  "keywords": [
+    "kdnj",
+    "koding-ninja",
+    "kodingdotninja",
+    "nextplate",
+    "nextplate-bare"
+  ],
+  "license": "MIT"
+}

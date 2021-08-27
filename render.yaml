@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/inpyjamas/schemas/main/render.com.json
+# https://render.com/docs/yaml-spec
+
+services:
+  - name: nextplate-bare
+    type: web
+    env: static
+    buildCommand: yarn install && yarn build:static
+    domains:
+      - bare.nextplate.dev
+    pullRequestPreviewsEnabled: true
+    staticPublishPath: out
