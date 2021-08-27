@@ -7,7 +7,7 @@
   "author": "Griko Nibras <griko@koding.ninja>",
   "scripts": {
     "# general commands": "##################################################",
-    "build": "next build && yarn generate:favicons && yarn generate:sitemap",
+    "build": "yarn generate:favicons && next build && yarn generate:sitemap",
     "build:local": "env-cmd yarn build",
     "build:static": "yarn build && next export",
     "build:static-local": "env-cmd yarn build:static",
