@@ -4,11 +4,10 @@
 
 import * as React from "react";
 
-import Logo from "~public/logo.svg";
+import siteConfig from "~config/site";
 import { NextPage } from "~types/next";
 
 import { PageConfig } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 
@@ -20,8 +19,8 @@ const OpenGraphPage: NextPage = () => {
 
   return (
     <main className="standard card">
-      {/* eslint-disable @typescript-eslint/no-unsafe-assignment */}
-      <Image height="128px" src={Logo} width="128px" />
+      {/* eslint-disable @next/next/no-img-element,@typescript-eslint/no-unsafe-assignment */}
+      <img alt={siteConfig.title} height="128px" src="/logo.svg" width="128px" />
 
       <NextSeo title={title} />
       <h1>{title}</h1>

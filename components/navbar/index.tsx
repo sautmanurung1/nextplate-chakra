@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import Logo from "~public/logo.svg";
+import siteConfig from "~config/site";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const routes: Record<string, React.ReactNode> = {
@@ -15,8 +14,8 @@ const routes: Record<string, React.ReactNode> = {
 export default function Navbar() {
   return (
     <nav>
-      {/* eslint-disable @typescript-eslint/no-unsafe-assignment */}
-      <Image height="24px" src={Logo} width="24px" />
+      {/* eslint-disable @next/next/no-img-element,@typescript-eslint/no-unsafe-assignment */}
+      <img alt={siteConfig.title} height="24px" src="/logo.svg" width="24px" />
 
       {Object.entries(routes).map(([href, node]) => (
         <Link key={href} href={href}>
