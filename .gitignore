@@ -8,6 +8,7 @@
 .vercel
 .yarn/*
 /**/node_modules/
+out/
 package-lock.json
 
 # ignored generated assets; remove these if prefer commiting generated assets
@@ -15,6 +16,8 @@ package-lock.json
 /public/icons/**/*
 /public/browserconfig.xml
 /public/manifest.json
+/public/robots.txt
+/public/sitemap.xml
 
 # allowed directories/files
 !**/.gitkeep
