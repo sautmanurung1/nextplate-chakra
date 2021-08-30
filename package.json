@@ -16,7 +16,7 @@
     "generate:favicons": "node scripts/favicons.js",
     "generate:sitemap": "next-sitemap --config config/sitemap.js",
     "lint": "eslint --fix \"./**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks",
+    "prepare": "husky install $PWD/.husky",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "validate": "yarn lint && yarn type-check",
@@ -49,8 +49,7 @@
     "env-cmd": "^10",
     "husky": "^7",
     "lint-staged": "^11",
-    "puppeteer": "^10",
-    "shx": "^0"
+    "puppeteer": "^10"
   },
   "eslintConfig": {
     "extends": [
