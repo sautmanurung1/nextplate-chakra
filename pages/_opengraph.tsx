@@ -4,6 +4,7 @@
 
 import * as React from "react";
 
+import nextplateConfig from "~config/nextplate";
 import Logo from "~public/logo.svg";
 import { NextPage } from "~types/next";
 
@@ -31,8 +32,8 @@ const OpenGraphPage: NextPage = () => {
         html,
         body,
         main {
-          height: 600px;
-          width: 1024px;
+          height: ${nextplateConfig.opengraph.height}px;
+          width: ${nextplateConfig.opengraph.width};
           font-size: 2em;
         }
 

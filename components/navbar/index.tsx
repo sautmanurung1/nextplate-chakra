@@ -10,6 +10,7 @@ const routes: Record<string, React.ReactNode> = {
   "/about": "About",
   "/empty": "Empty Layout",
   "/_opengraph": "Open Graph",
+  "/api/opengraph/?title=hello%20world&description=this%20is%20a%20test": "Open Graph API",
 };
 
 export default function Navbar() {
@@ -19,7 +20,7 @@ export default function Navbar() {
       <Image height="24px" src={Logo} width="24px" />
 
       {Object.entries(routes).map(([href, node]) => (
-        <Link key={href} href={href}>
+        <Link key={href} href={href} passHref>
           <a>{node}</a>
         </Link>
       ))}
