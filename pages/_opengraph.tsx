@@ -16,8 +16,8 @@ import { NextSeo } from "next-seo";
 const OpenGraphPage: NextPage = () => {
   const router = useRouter();
 
-  const title = (router.query.title as string) ?? "Nextplate Bare Example Page";
-  const description = (router.query.description as string) ?? "Opinionated Next.js barebones template";
+  const title = (router.query.title as string) ?? "Nextplate Chakra Example Page";
+  const description = (router.query.description as string) ?? "Opinionated Next.js template with Chakra UI";
 
   return (
     <main className="standard card">

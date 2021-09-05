@@ -2,12 +2,12 @@
 
 const siteConfig = {
   defaultTitle: "Nextplate",
-  description: `Opinionated Next.js barebones template`,
-  title: "Nextplate Bare",
+  description: `Opinionated Next.js template with Chakra UI`,
+  title: "Nextplate Chakra",
   titleSeparator: " · ",
 
-  domain: `bare.nextplate.dev`,
-  siteUrl: `https://bare.nextplate.dev`,
+  domain: `chakra.nextplate.dev`,
+  siteUrl: `https://chakra.nextplate.dev`,
   twitterUsername: "@koding_ninja",
 
   socials: {

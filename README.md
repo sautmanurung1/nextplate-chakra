@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![nextplate-bare](./public/social.png)
+![nextplate-chakra](./public/social.png)
 
 [Read the Nextplate docs on how to use this boilerplate (WIP)](#)
 
@@ -25,15 +25,15 @@
 
 ### Using degit
 
-Create your new project using [degit](https://github.com/Rich-Harris/degit). This command will create a Nextplate Bare project in a new `my-awesome-project` directory:
+Create your new project using [degit](https://github.com/Rich-Harris/degit). This command will create a Nextplate Chakra project in a new `my-awesome-project` directory:
 
 ```sh
-npx degit kodingdotninja/nextplate-bare my-awesome-project
+npx degit kodingdotninja/nextplate-chakra my-awesome-project
 ```
 
 ### Using GitHub templates
 
-Click "Use This Template" on the project repository page, or [click here to create a new GitHub repository using this template](https://github.com/kodingdotninja/nextplate-bare/generate).
+Click "Use This Template" on the project repository page, or [click here to create a new GitHub repository using this template](https://github.com/kodingdotninja/nextplate-chakra/generate).
 
 ## Suggestions and/or questions
 

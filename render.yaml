@@ -2,13 +2,13 @@
 # https://render.com/docs/yaml-spec
 
 services:
-  - name: nextplate-bare-server
+  - name: nextplate-chakra-server
     type: web
     env: node
     buildCommand: sh ./scripts/render-build.sh
     startCommand: sh ./scripts/render-start.sh
 
-  - name: nextplate-bare-static
+  - name: nextplate-chakra-static
     type: web
     env: static
     buildCommand: sh ./scripts/render-build-static.sh

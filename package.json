@@ -1,9 +1,9 @@
 {
-  "name": "nextplate-bare",
-  "description": "Opinionated Next.js barebones template",
+  "name": "nextplate-chakra",
+  "description": "Opinionated Next.js template with Chakra UI",
   "version": "0.0.1",
-  "homepage": "https://github.com/kodingdotninja/nextplate-bare",
-  "repository": "https://github.com/kodingdotninja/nextplate-bare.git",
+  "homepage": "https://github.com/kodingdotninja/nextplate-chakra",
+  "repository": "https://github.com/kodingdotninja/nextplate-chakra.git",
   "author": "Griko Nibras <griko@koding.ninja>",
   "scripts": {
     "# general commands": "##################################################",
@@ -85,7 +85,7 @@
     "koding-ninja",
     "kodingdotninja",
     "nextplate",
-    "nextplate-bare"
+    "nextplate-chakra"
   ],
   "license": "MIT"
 }
