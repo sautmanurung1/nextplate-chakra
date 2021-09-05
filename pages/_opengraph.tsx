@@ -33,7 +33,7 @@ const OpenGraphPage: NextPage = () => {
         body,
         main {
           height: ${nextplateConfig.opengraph.height}px;
-          width: ${nextplateConfig.opengraph.width};
+          width: ${nextplateConfig.opengraph.width}px;
           font-size: 2em;
         }
 
