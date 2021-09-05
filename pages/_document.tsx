@@ -5,10 +5,31 @@
 import * as React from "react";
 
 import FaviconMetaTags from "~generated/favicon-meta-tags";
+import emotionCache from "~lib/emotion-cache";
 
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import { ColorModeScript } from "@chakra-ui/react";
+import createEmotionServer from "@emotion/server/create-instance";
+import Document, { DocumentContext, Head, Html, Main, NextScript } from "next/document";
+
+const { extractCritical } = createEmotionServer(emotionCache);
 
 export default class CustomDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    const styles = extractCritical(initialProps.html);
+    return {
+      ...initialProps,
+      styles: [
+        initialProps.styles,
+        <style
+          key="emotion-css"
+          dangerouslySetInnerHTML={{ __html: styles.css }}
+          data-emotion-css={styles.ids.join(" ")}
+        />,
+      ],
+    };
+  }
+
   render() {
     return (
       <Html lang="en">
@@ -20,15 +41,13 @@ export default class CustomDocument extends Document {
           <link href="https://fonts.googleapis.com" rel="preconnect" />
           <link crossOrigin="" href="https://fonts.gstatic.com" rel="preconnect" />
 
-          {/* remove this css reset */}
-          <link href="https://unpkg.com/hack@0.8.1/dist/hack.css" rel="stylesheet" />
-          <link href="https://unpkg.com/hack@0.8.1/dist/standard.css" rel="stylesheet" />
-
           {/* generated favicon meta tags using `yarn generate:favicons` */}
           <FaviconMetaTags />
         </Head>
 
         <body>
+          {/* https://chakra-ui.com/docs/features/color-mode#adding-the-colormodescript */}
+          <ColorModeScript />
           <Main />
           <NextScript />
         </body>

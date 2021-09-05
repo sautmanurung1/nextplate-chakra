@@ -5,8 +5,10 @@
 import * as React from "react";
 
 import layouts from "~layouts";
+import theme from "~theme";
 import { NextComponentType } from "~types/next";
 
+import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 
 interface StyleProviderProps {
@@ -16,10 +18,10 @@ interface StyleProviderProps {
 // add your style providers here (e.g. chakra-ui's <ChakraProvider />)
 function StyleProvider({ children }: StyleProviderProps) {
   return (
-    <>
+    <ChakraProvider resetCSS theme={theme}>
       {children}
       {/*  */}
-    </>
+    </ChakraProvider>
   );
 }
 
