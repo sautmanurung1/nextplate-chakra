@@ -8,6 +8,7 @@ import Footer from "~components/footer";
 import Navbar from "~components/navbar";
 import siteConfig from "~config/site";
 
+import { Box, Stack } from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
@@ -53,28 +54,16 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         url={siteConfig.siteUrl}
       />
 
-      <div className="container standard default-layout">
+      <Stack maxW="7xl" minH="100vh" mx="auto" p={4} spacing={4}>
         <Navbar />
 
-        <main>
+        <Box flexGrow={1}>
           {children}
           {/*  */}
-        </main>
+        </Box>
 
         <Footer />
-      </div>
-
-      <style jsx>{`
-        .default-layout {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-          padding: 1em;
-        }
-        .default-layout main {
-          flex-grow: 1;
-        }
-      `}</style>
+      </Stack>
     </>
   );
 }

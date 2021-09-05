@@ -1,22 +1,29 @@
 import * as React from "react";
 
+import { Box, Link } from "@chakra-ui/react";
+
 export default function Footer() {
   return (
-    <footer>
+    <Box as="footer" pb={4}>
       <small>
         <b>
-          Made using <a href="https://nextjs.org">Next.js</a> and <a href="https://github.com/egoist/hack">hack.css</a>.
+          Made using{" "}
+          <Link color="teal.600" href="https://nextjs.org">
+            Next.js
+          </Link>{" "}
+          and{" "}
+          <Link color="teal.600" href="https://github.com/chakra-ui/chakra-ui">
+            Chakra UI
+          </Link>
+          .
         </b>
         <br />
         MIT License &copy; {new Date().getFullYear()}&mdash;present{" "}
-        <a href="https://github.com/kodingdotninja">Koding Ninja</a>.
+        <Link color="teal.600" href="https://github.com/kodingdotninja">
+          Koding Ninja
+        </Link>
+        .
       </small>
-
-      <style jsx>{`
-        footer {
-          padding-bottom: 2em;
-        }
-      `}</style>
-    </footer>
+    </Box>
   );
 }

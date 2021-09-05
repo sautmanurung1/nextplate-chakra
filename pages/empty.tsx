@@ -6,18 +6,19 @@ import * as React from "react";
 
 import { NextPage } from "~types/next";
 
-import Link from "next/link";
+import { Heading, Link, Stack } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { NextSeo } from "next-seo";
 
 const EmptyLayoutPage: NextPage = () => {
   return (
-    <main className="standard">
+    <Stack as="main">
       <NextSeo title="Empty" />
-      <h1>Empty Layout Page</h1>
-      <Link href="/" passHref>
-        <a>Back to homepage</a>
-      </Link>
-    </main>
+      <Heading>Empty Layout Page</Heading>
+      <NextLink href="/" passHref>
+        <Link color="teal.600">Back to homepage</Link>
+      </NextLink>
+    </Stack>
   );
 };
 

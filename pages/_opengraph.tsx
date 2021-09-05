@@ -8,6 +8,7 @@ import nextplateConfig from "~config/nextplate";
 import Logo from "~public/logo.svg";
 import { NextPage } from "~types/next";
 
+import { Heading, Stack, Text } from "@chakra-ui/react";
 import { PageConfig } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -20,36 +21,30 @@ const OpenGraphPage: NextPage = () => {
   const description = (router.query.description as string) ?? "Opinionated Next.js template with Chakra UI";
 
   return (
-    <main className="standard card">
+    <Stack
+      align="flex-start"
+      borderWidth="1px"
+      h={nextplateConfig.opengraph.height}
+      justify="center"
+      p={4}
+      w={nextplateConfig.opengraph.width}
+    >
       {/* eslint-disable @typescript-eslint/no-unsafe-assignment */}
       <Image height="128px" src={Logo} width="128px" />
 
       <NextSeo title={title} />
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <Heading>{title}</Heading>
+      <Text>{description}</Text>
 
       <style jsx>{`
         html,
-        body,
-        main {
+        body {
+          display: block;
           height: ${nextplateConfig.opengraph.height}px;
           width: ${nextplateConfig.opengraph.width}px;
-          font-size: 2em;
-        }
-
-        main {
-          align-items: flex-start;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 1em;
-        }
-        main * {
-          margin: 0;
-          padding: 0.2em 0;
         }
       `}</style>
-    </main>
+    </Stack>
   );
 };
 

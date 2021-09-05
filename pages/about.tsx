@@ -2,15 +2,16 @@ import * as React from "react";
 
 import { NextPage } from "~types/next";
 
+import { Heading, Stack, Text } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 
 const AboutPage: NextPage = () => {
   return (
-    <section>
+    <Stack as="section">
       <NextSeo title="About" />
-      <h1>About Page</h1>
-      <p>Hello, world!</p>
-    </section>
+      <Heading>About Page</Heading>
+      <Text>Hello, world!</Text>
+    </Stack>
   );
 };
 
